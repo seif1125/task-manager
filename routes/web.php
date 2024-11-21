@@ -42,4 +42,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('tasks/{task}/store-comment', [TaskController::class, 'storeComment'])->name('tasks.storeComment');
    Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
    Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store'); // Route for storing a new task
+   Route::patch('tasks/{task}/store-comment', [TaskController::class, 'storeComment'])->name('tasks.storeComment');
 });
