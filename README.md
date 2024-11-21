@@ -55,19 +55,5 @@ Before you begin, ensure you have the following installed:
 ## .env Configuration Notes
 Ensure that you configure the following environment variables in your .env file or create .env from .env.copy file:
 
-env:
-DB_CONNECTION=mysql
-DB_HOST=task-manger-sql-task-manger.b.aivencloud.com
-DB_PORT=27460
-DB_DATABASE=defaultdb
-DB_USERNAME=avnadmin
-DB_PASSWORD=AVNS_p5tA1wB5c7Hs47UGGBH
-# MAIL_MAILER=smtp
-# MAIL_HOST=mailpit
-# MAIL_PORT=1025
-# MAIL_USERNAME=null
-# MAIL_PASSWORD=null
-# MAIL_ENCRYPTION=null
-# MAIL_FROM_ADDRESS="hello@example.com"
-# MAIL_FROM_NAME="${APP_NAME}"
-#NO MAIL SERVER RIGHT NOW
+![Screenshot from 2024-11-21 17-54-48](https://github.com/user-attachments/assets/9249ab06-2434-4b16-8798-3cfbc3b29960)
+
