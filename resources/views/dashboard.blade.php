@@ -114,6 +114,9 @@
         @csrf
         <button type="submit">Logout</button>
     </form>
+    <div style="margin-bottom: 20px;">
+        <a href="{{ route('tasks.create') }}" class="create-task-btn"><button type="submit">Create Task</button></a>
+    </div>
 
     <!-- Filters at the Top -->
     <h2>Filter Tasks</h2>
@@ -222,7 +225,7 @@
     @else
         <p class="no-tasks">No tasks match the current filter criteria.</p>
     @endif
-    <button type="submit">Create Task</button>
+
 
 </body>
 </html>

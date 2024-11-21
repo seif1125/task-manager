@@ -4,107 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #333;
-        }
-        form {
-            margin: 10px 0;
-        }
-        select, textarea, button {
-            padding: 10px;
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        button {
-            background-color: #11264a;
-            color: #e6007e;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: ##11264a;
-        }
-        .task-container {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-        .task-title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .task-status {
-            color: #e6007e;
-        }
-        .comments {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #e9f7e9;
-            border-radius: 8px;
-        }
-        .no-tasks {
-            color: #888;
-            font-style: italic;
-        }
-        .logout-form, .filter-form, .create-task {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f1f1f1;
-            border-radius: 8px;
-        }
-        .logout-form button {
-            margin-left: auto;
-        }
-        .header, .footer {
-            background: #11264a;
-            color: #e6007e;
-            padding: 15px 20px;
-            text-align: center;
-        }
-        .header h1, .footer p {
-            margin: 0;
-            color: #e6007e
-        }
-        a.create-task {
-            display: inline-block;
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: ##e6007e;
-            color: #e6007e;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        a.create-task:hover {
-            background-color: #11264a;
-        }
-        @media (max-width: 768px) {
-            .task-container {
-                font-size: 14px;
-            }
-            select, textarea, button {
-                font-size: 12px;
-            }
-        }
-    </style>
+    <style>  body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #11264a;
+        color: #ffffff;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #1b365d;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    h2 {
+        color: #e6007e;
+        margin-bottom: 20px;
+    }
+    label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+        color: #e6007e;
+    }
+    input[type="text"], textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    button {
+        background-color: #e6007e;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #c0006c;
+    }
+    .header {
+        background: #11264a;
+        color: #e6007e;
+        padding: 15px 20px;
+        text-align: center;
+    }
+    .header h1 {
+        margin: 0;
+    }
+    .logout-form {
+        margin-bottom: 20px;
+    }
+    .footer {
+        background: #11264a;
+        color: #e6007e;
+        padding: 15px;
+        text-align: center;
+    }
+    .footer p {
+        margin: 0;
+    }</style>
 </head>
 <body>
 
@@ -121,8 +85,7 @@
             </form>
         </div>
 
-        <!-- Tasks Created Section -->
-        <h2>Your Created Tasks</h2>
+
 
         <div class="create-task-form">
             <h2>Create New Task</h2>
