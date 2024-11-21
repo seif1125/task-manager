@@ -13,40 +13,22 @@ class TaskController extends Controller
 {
     public function index(Request $request)
     {
-        $tasksCreated = collect(); // Default to an empty collection
-        $tasksAssigned = collect(); // Default to an empty collection
-
         $query = Task::query();
 
-        // Filter by status only if it's not "All Statuses" or empty
-        if ($request->has('status') && $request->status !== null && $request->status !== 'All Statuses') {
+        if ($request->has('status') && $request->status) {
             $query->where('status', $request->status);
-
         }
 
-
-        // Filter by assignee only if it's not "All Users" or empty
-        if ($request->has('assignee_id') && $request->assignee_id !== null && $request->assignee_id !== 'All Users') {
+        if ($request->has('assignee_id') && $request->assignee_id) {
             $query->where('assignee_id', $request->assignee_id);
-
-
         }
 
-       if((!$request->has('assignee_id') || $request->assignee_id == '' || $request->assignee_id == 'All Users')&&(!$request->has('status') || $request->status == '' || $request->status == 'All Statuses')){
-            // If "All Users" or no specific filter, don't retrieve created or assigned tasks
-            $tasks = $query->get();
+        $tasksCreated = $query->where('user_id', auth()->id())->get();
+        $tasksAssigned = $query->where('assignee_id', auth()->id())->get();
 
-           return redirect()->route('dashboard')->with('success', 'Task assigned successfully!');
-        }
-        $tasks = $query->get();
-
-
-        // Retrieve filtered tasks
-
-        // Get all users for the assignee dropdown
         $users = User::all();
 
-        return view('dashboard', compact('tasks', 'users', 'tasksCreated', 'tasksAssigned'));
+        return view('dashboard', compact('tasksCreated', 'tasksAssigned', 'users'));
     }
 
 public function dashboard(Request $request)
